@@ -74,6 +74,21 @@ npm run build
 npm start
 ```
 
+
+## Live-run checklist
+
+The automated entry path is implemented, but live Twitter/X actions were not exercised in CI because they require a real account, an authenticated browser session, and platform-dependent UI state. Before expecting live entries and Discord alerts:
+
+1. Copy `.env.sample` to `.env` and set `DISCORD_WEBHOOK_URL`.
+2. Keep `DRY_RUN=true` for the first run and verify parser output, entries, logs, and Discord delivery.
+3. Run once with `HEADLESS=false` and log in to Twitter/X if the account needs MFA, captcha, or manual verification. The session is persisted in `data/browser-profile`.
+4. Add safe `replies.usernamesForTagging` in `config/config.json` if you want tag-friend entries.
+5. Review rate limits, blacklist accounts, blocked keywords, and monitored searches/accounts.
+6. To enable live actions, set `DRY_RUN=false` in `.env` and set `automation.dryRun` to `false` in `config/config.json`.
+7. Start with conservative hourly/daily limits and watch the dashboard/Discord alerts for failures.
+
+If Twitter/X shows captcha, login verification, or unusual-activity screens, the bot will stop that flow and send a Discord notification when a webhook is configured.
+
 ## Dashboard
 
 The dashboard supports:
