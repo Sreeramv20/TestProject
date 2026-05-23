@@ -1,0 +1,59 @@
+{
+  "name": "pokemon-x-giveaway-bot",
+  "version": "1.0.0",
+  "description": "Production-ready Pokemon TCG Twitter/X giveaway automation bot with dashboard.",
+  "main": "dist/server/index.js",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "dev:dashboard": "vite --host 0.0.0.0",
+    "build": "npm run build:server && npm run build:dashboard",
+    "build:server": "tsc -p tsconfig.json",
+    "build:dashboard": "tsc -p tsconfig.dashboard.json && vite build",
+    "start": "node dist/server/index.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.dashboard.json --noEmit",
+    "test": "npm run typecheck",
+    "playwright:install": "playwright install chromium"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sreeramv20/TestProject.git"
+  },
+  "keywords": [
+    "pokemon",
+    "twitter",
+    "x",
+    "giveaway",
+    "automation",
+    "playwright",
+    "discord"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sreeramv20/TestProject/issues"
+  },
+  "homepage": "https://github.com/Sreeramv20/TestProject#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "playwright": "^1.60.0",
+    "uuid": "^14.0.0",
+    "winston": "^3.19.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.9.1",
+    "@types/react": "^19.2.15",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.2",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "tsx": "^4.22.3",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.14"
+  },
+  "type": "module"
+}

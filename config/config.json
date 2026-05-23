@@ -1,0 +1,95 @@
+{
+  "search": {
+    "terms": [
+      "pokemon giveaway",
+      "pokemon tcg giveaway",
+      "booster box giveaway",
+      "ETB giveaway",
+      "Pokemon cards giveaway",
+      "follow retweet giveaway pokemon"
+    ],
+    "hashtags": [
+      "PokemonGiveaway",
+      "PokemonTCG",
+      "PokemonCards"
+    ],
+    "accounts": [],
+    "advancedQueries": [
+      "(pokemon OR pokémon) (giveaway OR win) (follow OR retweet OR repost)",
+      "\"booster box\" giveaway pokemon",
+      "\"elite trainer box\" giveaway"
+    ]
+  },
+  "automation": {
+    "startOnBoot": false,
+    "enabled": true,
+    "dryRun": true,
+    "pollIntervalSeconds": 300,
+    "maxGiveawaysPerHour": 4,
+    "maxGiveawaysPerDay": 20,
+    "minDelayMs": 2500,
+    "maxDelayMs": 11000,
+    "actionCooldownMs": 45000,
+    "maxRetries": 3,
+    "retryBaseDelayMs": 3000,
+    "headless": true,
+    "sessionStatePath": "data/twitter-storage-state.json",
+    "browserUserDataDir": "data/browser-profile"
+  },
+  "safety": {
+    "blacklistAccounts": [],
+    "blockedKeywords": [
+      "crypto",
+      "nft",
+      "airdrop",
+      "wallet",
+      "cashapp",
+      "telegram"
+    ],
+    "requiredKeywords": [
+      "pokemon",
+      "pokémon",
+      "tcg",
+      "booster",
+      "etb",
+      "cards"
+    ],
+    "skipPurchaseRequired": true,
+    "skipCryptoNft": true,
+    "skipExternalJoinRequired": false,
+    "minParserConfidence": 0.45
+  },
+  "replies": {
+    "templates": [
+      "My favorite Pokémon is {pokemon}! Thanks for the chance.",
+      "This would be amazing for my collection. Favorite Pokémon: {pokemon}.",
+      "I have to go with {pokemon}. Good luck everyone!",
+      "Thanks for hosting! {pokemon} is my pick."
+    ],
+    "quoteTemplates": [
+      "Pokemon TCG giveaway alert. Good luck, trainers!",
+      "This would be a great addition to any collection.",
+      "Entering for a shot at this Pokemon TCG prize."
+    ],
+    "pokemonFavorites": [
+      "Pikachu",
+      "Charizard",
+      "Eevee",
+      "Gengar",
+      "Snorlax",
+      "Umbreon",
+      "Mew",
+      "Dragonite"
+    ],
+    "usernamesForTagging": []
+  },
+  "ai": {
+    "enabled": false,
+    "model": "gpt-4o-mini",
+    "temperature": 0.1,
+    "maxTokens": 700
+  },
+  "dashboard": {
+    "enabled": true
+  }
+}
