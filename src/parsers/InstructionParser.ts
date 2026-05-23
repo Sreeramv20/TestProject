@@ -72,7 +72,7 @@ export function ruleBasedParse(tweet: TweetCandidate): ParsedInstructions {
     || tagCount > 0;
   const quoteRetweet = /\b(quote|qrt|quote retweet|quote repost)\b/.test(normalized);
   const retweet = /\b(rt|retweet|repost|share)\b/.test(normalized);
-  const like = /\b(like|heart|fav|favorite)\b/.test(normalized);
+  const like = /\b(like|heart|fav)\b/.test(normalized);
   const joinDiscord = /\b(discord|server)\b/.test(normalized)
     && /\b(join|enter|verify)\b/.test(normalized);
   const visitLinks = extractLinks(text);

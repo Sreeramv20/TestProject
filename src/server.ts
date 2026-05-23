@@ -195,7 +195,7 @@ export async function createApp(context: RuntimeContext): Promise<{
 
   const dashboardDir = path.resolve(process.cwd(), 'dist', 'dashboard');
   app.use(express.static(dashboardDir));
-  app.get('*', (_req, res) => {
+  app.get(/.*/, (_req, res) => {
     res.sendFile(path.join(dashboardDir, 'index.html'), (error) => {
       if (error) {
         res.status(404).send('Dashboard is not built yet. Run npm run build.');
